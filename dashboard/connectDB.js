@@ -1,7 +1,7 @@
 const path = require("path");
 
 // حدد مسارات الملفات بدون استخدام الامتداد .dev
-const dirConfig = path.join(`${__dirname}/../config.json`);
+const dirConfig = path.join(`${__dirname}/../config.dev.json`);
 const dirConfigCommands = path.join(`${__dirname}/../configCommands.json`);
 
 global.GoatBot = {
