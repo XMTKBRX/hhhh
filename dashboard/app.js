@@ -257,7 +257,7 @@ module.exports = async (api) => {
 				message: 'Vui lòng nhập fbstate!'
 			});
 
-		fs.writeFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.dev.txt' : '/account.txt'), fbstate);
+		fs.writeFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.txt' : '/account.dev.txt'), fbstate);
 		res.send({
 			status: "success",
 			message: 'Đã thay đổi fbstate thành công!'
@@ -269,7 +269,7 @@ module.exports = async (api) => {
 	app.get('/uptime', global.responseUptimeCurrent);
 	app.get('/changefbstate', isAuthenticated_G, isVeryfiUserIDFacebook_G, isAdmin_G, (req, res) => {
 		res.render('changeFbstate', {
-			currentFbstate: fs.readFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.dev.txt' : '/account.txt'), 'utf8')
+			currentFbstate: fs.readFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.txt' : '/account.dev.txt'), 'utf8')
 		});
 	});
 
