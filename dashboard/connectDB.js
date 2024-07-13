@@ -1,12 +1,14 @@
 const path = require("path");
 
-const dirConfig = path.join(`${__dirname}/../${process.env.NODE_ENV === 'development' ? 'config.json' : 'config.json'}`);
-const dirConfigCommands = path.join(`${__dirname}/../${process.env.NODE_ENV === 'development' ? 'configCommands.json' : 'configCommands.json'}`);
+// حدد مسارات الملفات بدون استخدام الامتداد .dev
+const dirConfig = path.join(`${__dirname}/../config.json`);
+const dirConfigCommands = path.join(`${__dirname}/../configCommands.json`);
 
 global.GoatBot = {
 	config: require(dirConfig),
 	configCommands: require(dirConfigCommands)
 };
+
 global.utils = require("../utils.js");
 global.client = {
 	database: {
@@ -15,6 +17,7 @@ global.client = {
 		creatingDashBoardData: []
 	}
 };
+
 global.db = {
 	allThreadData: [],
 	allUserData: [],
