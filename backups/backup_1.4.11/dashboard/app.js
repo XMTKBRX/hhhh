@@ -265,7 +265,7 @@ module.exports = async (api) => {
 				message: 'Vui lòng nhập fbstate!'
 			});
 
-		fs.writeFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.txt' : '/account.dev.txt'), fbstate);
+		fs.writeFileSync(process.cwd() + (process.env.NODE_ENV == "production" || process.env.NODE_ENV == "development" ? '/account.dev.txt' : '/account.dev.txt'), fbstate);
 		res.send({
 			status: "success",
 			message: 'Đã thay đổi fbstate thành công!'
